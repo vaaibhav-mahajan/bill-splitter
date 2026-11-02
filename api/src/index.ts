@@ -1,7 +1,26 @@
-import { Hono } from 'hono'
+import { Hono, type Env } from "hono";
+import zod from "zod";
+import { createDb } from "./db";
+import { homes } from "./db/schema";
 
-const app = new Hono<{ Bindings: Env }>()
+const userObject = zod.object({
+  name: zod.string(),
+});
 
-app.get('/api/health', (c) => c.json({ status: 'ok' }))
+type Bindings = {
+  DB: D1Database;
+};
 
-export default app
+const app = new Hono<{ Bindings: Bindings }>();
+
+app.get("/api/health", (c) => c.json({ status: "ok" }));
+
+app.get("/api/home", async function (c) {
+    const db = createDb(c.env.DB);
+
+    const result = await db.select().from(homes);
+    console.log(result);
+  return c.json({ statuss: "jdlskjl" });
+});
+
+export default app;
