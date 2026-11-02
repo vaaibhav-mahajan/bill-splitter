@@ -1,7 +1,7 @@
-import { drizzle } from "drizzle-orm/d1";
+import { drizzle } from 'drizzle-orm/d1'
 
 export const createDb = (db: D1Database) => {
-  return drizzle(db);
-};
+  return drizzle(db)
+}
 
-export type Database = ReturnType<typeof createDb>;
+export type Database = ReturnType<typeof createDb>

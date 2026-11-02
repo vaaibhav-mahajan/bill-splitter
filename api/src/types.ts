@@ -1,10 +1,10 @@
-import type { createDb } from "./db";
+import type { createDb } from './db'
 
 export type AppEnv = {
   Bindings: {
-    DB: D1Database;
-  };
+    DB: D1Database
+  }
   Variables: {
-    db: ReturnType<typeof createDb>;
-  };
-};
+    db: ReturnType<typeof createDb>
+  }
+}

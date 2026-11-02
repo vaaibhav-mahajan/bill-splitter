@@ -155,3 +155,7 @@ You must understand every line you submit. We check this with your video and in 
 5. Paste the repository link and the video link in the application form.
 
 We will run `pnpm install && pnpm check && pnpm typecheck && pnpm test` on your repository.
+
+## Decisions
+
+See [Acknowledgements](./Acknowledgements.md#key-technical-decisions) for the three technical decisions.
